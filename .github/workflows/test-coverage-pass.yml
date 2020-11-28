@@ -1,0 +1,73 @@
+name: test-coverage
+
+on:
+  push:
+    branches: [ main ]
+  #    path:
+  #      - 'auth/**'
+  pull_request:
+    branches: [ main ]
+#    path:
+#      - 'auth/**'
+
+jobs:
+  converage:
+    name: Test coverage and the badge
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Updating Test Passing Badge To Failed
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
+          filename: dav-express-test-pass-badge.json
+          label: Tests
+          message: failed
+          color: critical
+
+      - name: Setup Node.js environment and Test coverage
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        run: npm install && npm run test:cover
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE < 40
+        run: echo "GH_COVERAGE_COLOR=red" >> $GITHUB_ENV
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 40 && env.GH_COVERAGE < 60
+        run: echo "GH_COVERAGE_COLOR=orange" >> $GITHUB_ENV
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 60 && env.GH_COVERAGE < 80
+        run: echo "GH_COVERAGE_COLOR=green" >> $GITHUB_ENV
+
+      - name: Set coverage badge color
+        if: env.GH_COVERAGE >= 80
+        run: echo "GH_COVERAGE_COLOR=brightgreen" >> $GITHUB_ENV
+
+      - name: Updating Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: 8538c4d06e5772f17bf3d6ee9f32c211
+          filename: dav-express-coverage.json
+          label: Coverage
+          message: ${{ env.GH_COVERAGE }}%
+          color: ${{ env.GH_COVERAGE_COLOR }}
+
+      - name: Updating Test Passing Badge To Passed
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
+          filename: dav-express-test-pass-badge.json
+          label: Tests
+          message: passing
+          color: success

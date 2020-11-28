@@ -1,0 +1,24 @@
+version: '2.4'
+
+services:
+    postgres:
+        image: 'postgres:13.1'
+        environment:
+            - POSTGRES_PASSWORD=myPostgresPassword
+    node:
+        build:
+            dockerfile: Dockerfile.development
+            context: .
+        volumes:
+            - .:/usr/src/app
+#            - /usr/src/app/node_modules
+        environment:
+            - NODE_ENV=development
+            - PG_HOST=postgres
+            - PG_PORT=5432
+            - PG_DATABASE=postgres
+            - PG_USER=postgres
+            - PG_PASSWORD=myPostgresPassword
+        ports:
+            - '5000:5000'
+            - '9229:9229'

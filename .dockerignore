@@ -1,0 +1,10 @@
+.git
+/node_modules
+/dist
+/coverage
+npm-debug.log
+docker-compose*.yml
+.eslintcache
+*.env
+*.env.development
+*.env.test

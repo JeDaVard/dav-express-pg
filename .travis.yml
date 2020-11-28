@@ -1,0 +1,35 @@
+#language: generic
+#services:
+#  - docker
+#
+#before_install:
+#  - docker build -t davitvardanyan/react-test -f ./client/Dockerfile.dev ./client
+#
+#script:
+#  - docker run -e CI=true davitvardanyan/react-test npm run test
+#
+#after_success:
+#  # Make images for pushing to the D hub
+#  - docker build -t jedavard/multi-client ./client
+#  - docker build -t jedavard/multi-nginx ./nginx
+#  - docker build -t jedavard/multi-worker ./worker
+#  - docker build -t jedavard/multi-server ./server
+#  # Login to my account
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#  # Take those images and push them to docker hub
+#  - docker push jedavard/multi-client
+#  - docker push jedavard/multi-nginx
+#  - docker push jedavard/multi-worker
+#  - docker push jedavard/multi-server
+#
+#deploy:
+#  edge: true
+#  provider: elasticbeanstalk
+#  region: us-east-1
+#  app: Multi-Docker
+#  env: Multi-Docker-env
+#  bucket: elasticbeanstalk-us-east-1-530805451288
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
+#  on:
+#    branch: master

@@ -1,0 +1,19 @@
+FROM node:14.15.1-alpine3.12
+
+# The optimal place to keep your project
+WORKDIR /usr/src/app
+
+# Enviroment variables for your runtime
+ENV PATH ./node_modules/.bin:$PATH
+ENV NODE_PATH ./
+ENV NODE_ENV=development
+
+# Copy your project to workdir, later your can also copy the lockfile and use the new "npm ci" command
+COPY . .
+
+# Install your production dependencies and clean the npm cache
+RUN npm install
+
+EXPOSE 5000
+
+CMD ["npm", "run", "dev"]

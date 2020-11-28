@@ -1,0 +1,60 @@
+name: badge-updates
+
+on:
+  push:
+    branches: [ main ]
+  #    path:
+  #      - 'auth/**'
+  pull_request:
+    branches: [ main ]
+#    path:
+#      - 'auth/**'
+
+jobs:
+  lines:
+    name: Count lines of code
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Set total lines as an env var
+        run: echo "TOTAL_LINES=$(git ls-files -- . ':!:.idea' ':!:*.json' ':!:*.md' | xargs cat | wc -l)" >> $GITHUB_ENV
+
+      - name: Set pure source code lines as an env var
+        run: echo "SOURCE_LINES=$(git ls-files src/ | grep -E ".*(js|ts)" | xargs cat | wc -l)" >> $GITHUB_ENV
+
+      - name: Set config lines as an env var
+        run: echo "CONFIG_LINES=$(git ls-files -- . ':!:.idea' ':!:*.json' ':!:*.md' ':!:src' | xargs cat | wc -l)" >> $GITHUB_ENV
+
+      - name: Updating Total lines counter
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: 8e956dd9f3809db71fe6924de220946a
+          filename: dav-express-total-lines.json
+          label: Total
+          message: ${{ env.TOTAL_LINES }} lines
+          color: blue
+
+      - name: Updating Pure Source lines counter
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: cb9395f504314fde235022d95d90a2aa
+          filename: dav-express-pure-src-lines.json
+          label: Source
+          message: ${{ env.SOURCE_LINES }} lines
+          color: ff69b4
+
+      - name: Updating Config lines counter
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.COVERAGE_BUDGE }}
+          gistID: 41fab36221f2950bf4e1ed1cfb3a87e1
+          filename: dav-express-config-line-count.json
+          label: Configs
+          message: ${{ env.CONFIG_LINES }} lines
+          color: 9cf
