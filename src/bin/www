@@ -1,0 +1,110 @@
+const { env } = require('config/environment')
+const http = require('http');
+const mongoose = require('mongoose');
+const { client } = require('components/db')
+
+const { app } = require('app');
+
+const server = http.createServer(app);
+
+/*
+ * if you do logging middleware, and use docker,
+ * search for "node logging on docker" and "winston.transports.Console"
+ * https://github.com/winstonjs/winston/blob/master/docs/transports.md#console-transport
+ * The idea is make winston to record logs in docker logs, otherwise logs on node would be removed
+ * when you restart the container, and docker logs will always be empty
+ * */
+
+(async function () {
+	try {
+		// Connect to DB
+		await mongoose.connect(env.MONGO_URI, {
+		    useNewUrlParser: true,
+		    useCreateIndex: true,
+		    useUnifiedTopology: true,
+		})
+		console.log('[Node Process] MongoDB is connected...')
+
+		await client.authenticate()
+		// await client.sync({force: true})
+		console.log('[Node Process] PostgreSQL is connected...')
+	} catch (e) {
+		console.error(e);
+		process.exit();
+	}
+
+	// Run the server
+	server.listen(env.PORT, () => {
+		console.log(`[Node Process] Server is up on ${env.PORT}, env: ${process.env.NODE_ENV}`);
+
+		if (process.env.NODE_ENV !== 'development') {
+			// quit on ctrl-c when running docker in terminal
+			process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+			// quit properly on docker stop
+			process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+		}
+	});
+})();
+
+/**
+ * @description You need this code so node will watch for exit signals
+ * node by default doesn't handle SIGINT/SIGTERM
+ * docker containers use SIGINT and SIGTERM to properly exit
+ * https://github.com/npm/npm/issues/4603
+ * https://github.com/npm/npm/pull/10868
+ * https://github.com/RisingStack/kubernetes-graceful-shutdown-example/blob/master/src/index.js
+ * if you want to use npm then start with `docker run --init` to help, but I still don't think it's
+ * a graceful shutdown of node process, just a forced exit
+ */
+
+// shut down server
+// @ts-ignore
+function gracefulShutdown(signal) {
+	console.info(
+		`[Node Process]: ${new Date().toISOString()}, signal: ${signal}, port: ${env.PORT}, pid: ${
+			process.pid
+		}`,
+	);
+	// waitForSocketsToClose(10)
+
+	// NOTE: server.close is for express based apps
+	// If using hapi, use `server.stop`
+	// @ts-ignore
+	server.close(function onServerClosed(err) {
+		if (err) {
+			console.error(err);
+			process.exitCode = 1;
+		}
+		process.exit();
+	});
+}
+
+// For sockets
+// let sockets = {} as any,
+//     nextSocketId = 0
+//
+// server.on('connection', function (socket) {
+//     const socketId = nextSocketId++
+//     sockets[socketId] = socket
+//
+//     socket.once('close', function () {
+//         delete sockets[socketId]
+//     })
+// })
+//
+// function waitForSocketsToClose(counter: number) {
+//     if (counter > 0) {
+//         console.log(
+//             `Waiting ${counter} more ${
+//                 counter !== 1 ? 'seconds' : 'second'
+//             } for all connections to close...`,
+//         )
+//         return setTimeout(waitForSocketsToClose, 1000, counter - 1)
+//     }
+//
+//     console.log('Forcing all connections to close now')
+//     for (let socketId in sockets) {
+//         sockets[socketId].destroy()
+//     }
+// }
