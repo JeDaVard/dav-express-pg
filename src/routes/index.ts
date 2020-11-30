@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { currentUser, errorHandler } from 'middlewares';
 import { NotFoundError } from 'libs/errors';
 import { router as apis } from './api';
-import { router as apis_v2 } from './api_v2';
+import { router as apis_v2 } from './api';
 import { env } from '../config/environment';
 
 const router = Router();

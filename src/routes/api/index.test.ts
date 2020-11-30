@@ -9,9 +9,9 @@ describe('Service API Routes', () => {
         server = request(app);
     });
 
-    describe(`GET /${env.API_VERSION_URL}/health`, () => {
+    describe(`GET /${env.API_VERSION_V2_URL}/health`, () => {
         test('should return status message', async () => {
-            const response = await server.get(`/${env.API_VERSION_URL}/health`);
+            const response = await server.get(`/${env.API_VERSION_V2_URL}/health`);
 
             expect(response.status).toBe(200);
             expect(response.type).toBe('application/json');

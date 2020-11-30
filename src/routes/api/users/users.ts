@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { userController } from 'controllers';
+import { userPgController as userController } from 'controllers';
 import { validateRequest } from 'middlewares';
 import { usersInputSchema } from 'config/validations';
 
