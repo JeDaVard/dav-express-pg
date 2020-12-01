@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile.development" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -52,6 +57,7 @@
       <workItem from="1606832747162" duration="3898000" />
       <workItem from="1606852706924" duration="75000" />
       <workItem from="1606852825576" duration="3699000" />
+      <workItem from="1606856635600" duration="5777000" />
     </task>
     <servers />
   </component>
@@ -68,5 +74,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,6 @@
 import { env } from 'config/environment';
 import jwt from 'jsonwebtoken';
-import { client} from 'components/db'
+import { client } from 'components/db';
 
 // DO NOT UNCOMMENT THIS WITHOUT A DEEP INVESTIGATION
 // jest.mock('@kuber-ticket/micro-events')
@@ -9,10 +9,7 @@ import { client} from 'components/db'
 declare global {
     namespace NodeJS {
         interface Global {
-            signUpAndCookie(
-                email?: string,
-                id?: number,
-            ): { id: string; cookies: string[] };
+            signUpAndCookie(email?: string, id?: number): { id: string; cookies: string[] };
         }
     }
 }
@@ -22,7 +19,7 @@ declare global {
 beforeAll(async () => {
     try {
         // connect to db
-        await client.authenticate()
+        await client.authenticate();
     } catch (e) {
         console.error('[DB] Error while connecting');
     }
@@ -30,26 +27,26 @@ beforeAll(async () => {
 
 beforeEach(async () => {
     // drop everything in DB
-    for (const model of Object.values(client.models) as any) {
+    for (const model of Object.values(client.models)) {
         await model.destroy({
             truncate: true,
             // force: true,
-            cascade: true
-        })
+            cascade: true,
+        });
     }
     // await client.sync({force: true})
 });
 
 afterAll(async () => {
     // drop everything and close the connection
-    for (const model of Object.values(client.models) as any) {
+    for (const model of Object.values(client.models)) {
         await model.destroy({
             truncate: true,
             // force: true,
-            cascade: true
-        })
+            cascade: true,
+        });
     }
-    await client.close()
+    await client.close();
 });
 
 global.signUpAndCookie = (email, id) => {
