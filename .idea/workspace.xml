@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.public" beforeDir="false" afterPath="$PROJECT_DIR$/.env.public" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/environment/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/environment/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/index.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/__test__/users.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +49,7 @@
       <updated>1606832745984</updated>
       <workItem from="1606832747162" duration="3898000" />
       <workItem from="1606852706924" duration="75000" />
-      <workItem from="1606852825576" duration="2991000" />
+      <workItem from="1606852825576" duration="3306000" />
     </task>
     <servers />
   </component>
