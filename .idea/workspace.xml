@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/badge-updates.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +51,22 @@
       <updated>1606832745984</updated>
       <workItem from="1606832747162" duration="3898000" />
       <workItem from="1606852706924" duration="75000" />
-      <workItem from="1606852825576" duration="3306000" />
+      <workItem from="1606852825576" duration="3699000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

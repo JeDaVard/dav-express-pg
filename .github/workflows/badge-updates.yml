@@ -32,7 +32,7 @@ jobs:
       - name: Updating Total lines counter
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: 1bd7dd55ba955f935311fa11e90504e2
           filename: dav-express-pg-total-lines.json
           label: Total
@@ -42,7 +42,7 @@ jobs:
       - name: Updating Pure Source lines counter
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: 3f4adb3f385e1ac1e5390e977c6d9b0a
           filename: dav-express-pg-pure-src-lines.json
           label: Source
@@ -52,7 +52,7 @@ jobs:
       - name: Updating Config lines counter
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: cb2732fc671ca52be57f88c5f2838863
           filename: dav-express-pg-config-line-count.json
           label: Configs

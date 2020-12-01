@@ -23,7 +23,7 @@ jobs:
       - name: Updating Test Passing Badge To Failed
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: 25afa5f62258dc4f590f218043d54521
           filename: dav-express-pg-test-pass-badge.json
           label: Tests
@@ -55,7 +55,7 @@ jobs:
       - name: Updating Coverage Badge
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: 8a44505b5c3b4a79f719497682ed4952
           filename: dav-express-pg-coverage.json
           label: Coverage
@@ -65,7 +65,7 @@ jobs:
       - name: Updating Test Passing Badge To Passed
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
-          auth: ${{ secrets.COVERAGE_BUDGE }}
+          auth: ${{ secrets.GT_AUTH_SECRET }}
           gistID: 25afa5f62258dc4f590f218043d54521
           filename: dav-express-pg-test-pass-badge.json
           label: Tests
