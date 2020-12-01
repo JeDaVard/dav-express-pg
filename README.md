@@ -2,11 +2,11 @@
 
 👌 Ultimate template for a Node.js project startup 👩‍💻 🧑‍💻 👨‍💻
 
-👉 ![lines-total](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8e956dd9f3809db71fe6924de220946a/raw/dav-express-total-lines.json)
-![lines-source](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cb9395f504314fde235022d95d90a2aa/raw/dav-express-pure-src-lines.json)
-![lines-config](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/41fab36221f2950bf4e1ed1cfb3a87e1/raw/dav-express-config-line-count.json)
-![test-status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cf394ed0edc2f4dd2f1d692cedd26a77/raw/dav-express-test-pass-badge.json)
-![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8538c4d06e5772f17bf3d6ee9f32c211/raw/dav-express-coverage.json)
+👉 ![lines-total](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/1bd7dd55ba955f935311fa11e90504e2/raw/dav-express-pg-total-lines.json)
+![lines-source](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/3f4adb3f385e1ac1e5390e977c6d9b0a/raw/dav-express-pg-pure-src-lines.json)
+![lines-config](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/cb2732fc671ca52be57f88c5f2838863/raw/dav-express-pg-config-line-count.json)
+![test-status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/25afa5f62258dc4f590f218043d54521/raw/dav-express-pg-test-pass-badge.json)
+![coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/jedavard/8a44505b5c3b4a79f719497682ed4952/raw/dav-express-pg-coverage.json)
 #
 ### Description
 

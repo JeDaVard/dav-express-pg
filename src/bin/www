@@ -1,6 +1,5 @@
 const { env } = require('config/environment')
 const http = require('http');
-const mongoose = require('mongoose');
 const { client } = require('components/db')
 
 const { app } = require('app');
@@ -18,13 +17,6 @@ const server = http.createServer(app);
 (async function () {
 	try {
 		// Connect to DB
-		await mongoose.connect(env.MONGO_URI, {
-		    useNewUrlParser: true,
-		    useCreateIndex: true,
-		    useUnifiedTopology: true,
-		})
-		console.log('[Node Process] MongoDB is connected...')
-
 		await client.authenticate()
 		// await client.sync({force: true})
 		console.log('[Node Process] PostgreSQL is connected...')

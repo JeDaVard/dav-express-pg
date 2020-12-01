@@ -1,7 +1,7 @@
 {
-    "name": "dav-express-template",
+    "name": "dav-express-pg",
     "version": "1.0.0",
-    "description": "a fully packaged template for node/express/ts/jest",
+    "description": "A fully packaged template for node/express/ts/pg/jest",
     "repository": {
         "url": ""
     },
@@ -34,8 +34,6 @@
         "express-async-errors": "^3.1.1",
         "joi": "^17.3.0",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.10.15",
-        "mongoose-update-if-current": "^1.4.0",
         "pg": "^8.5.1",
         "sequelize": "^6.3.5",
         "ts-node": "^9.0.0",

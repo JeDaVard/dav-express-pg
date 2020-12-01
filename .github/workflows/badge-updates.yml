@@ -33,8 +33,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: 8e956dd9f3809db71fe6924de220946a
-          filename: dav-express-total-lines.json
+          gistID: 1bd7dd55ba955f935311fa11e90504e2
+          filename: dav-express-pg-total-lines.json
           label: Total
           message: ${{ env.TOTAL_LINES }} lines
           color: blue
@@ -43,8 +43,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: cb9395f504314fde235022d95d90a2aa
-          filename: dav-express-pure-src-lines.json
+          gistID: 3f4adb3f385e1ac1e5390e977c6d9b0a
+          filename: dav-express-pg-pure-src-lines.json
           label: Source
           message: ${{ env.SOURCE_LINES }} lines
           color: ff69b4
@@ -53,8 +53,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: 41fab36221f2950bf4e1ed1cfb3a87e1
-          filename: dav-express-config-line-count.json
+          gistID: cb2732fc671ca52be57f88c5f2838863
+          filename: dav-express-pg-config-line-count.json
           label: Configs
           message: ${{ env.CONFIG_LINES }} lines
           color: 9cf

@@ -1,6 +1,6 @@
 import { env } from 'config/environment';
-import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+import { client} from 'components/db'
 
 // DO NOT UNCOMMENT THIS WITHOUT A DEEP INVESTIGATION
 // jest.mock('@kuber-ticket/micro-events')
@@ -11,7 +11,7 @@ declare global {
         interface Global {
             signUpAndCookie(
                 email?: string,
-                id?: mongoose.Types.ObjectId,
+                id?: number,
             ): { id: string; cookies: string[] };
         }
     }
@@ -21,37 +21,41 @@ declare global {
 // let mongo: any;
 beforeAll(async () => {
     try {
-        await mongoose.connect(env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-        });
+        // connect to db
+        await client.authenticate()
     } catch (e) {
-        console.error('[MongoDB] Error while connecting');
+        console.error('[DB] Error while connecting');
     }
 });
 
 beforeEach(async () => {
-    const collections = await mongoose.connection.db.collections();
-
-    for (let collection of collections) {
-        await collection.deleteMany({});
+    // drop everything in DB
+    for (const model of Object.values(client.models) as any) {
+        await model.destroy({
+            truncate: true,
+            // force: true,
+            cascade: true
+        })
     }
+    // await client.sync({force: true})
 });
 
 afterAll(async () => {
-    const collections = await mongoose.connection.db.collections();
-
-    for (let collection of collections) {
-        await collection.deleteMany({});
+    // drop everything and close the connection
+    for (const model of Object.values(client.models) as any) {
+        await model.destroy({
+            truncate: true,
+            // force: true,
+            cascade: true
+        })
     }
-    await mongoose.connection.close();
+    await client.close()
 });
 
 global.signUpAndCookie = (email, id) => {
     // Define a token payload for a user
     const payload = {
-        id: id || new mongoose.Types.ObjectId(),
+        id: id || 1,
         email: email || 'text@example.com',
     };
     // Sign a token
@@ -64,5 +68,5 @@ global.signUpAndCookie = (email, id) => {
     // Imitate default expressJS session-cookies appearance
     const cookies = [`express:sess=${base64}`];
 
-    return { id: payload.id.toHexString(), cookies };
+    return { id: String(payload.id), cookies };
 };

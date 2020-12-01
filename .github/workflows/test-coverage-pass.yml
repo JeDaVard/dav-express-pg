@@ -24,8 +24,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
-          filename: dav-express-test-pass-badge.json
+          gistID: 25afa5f62258dc4f590f218043d54521
+          filename: dav-express-pg-test-pass-badge.json
           label: Tests
           message: failed
           color: critical
@@ -56,8 +56,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: 8538c4d06e5772f17bf3d6ee9f32c211
-          filename: dav-express-coverage.json
+          gistID: 8a44505b5c3b4a79f719497682ed4952
+          filename: dav-express-pg-coverage.json
           label: Coverage
           message: ${{ env.GH_COVERAGE }}%
           color: ${{ env.GH_COVERAGE_COLOR }}
@@ -66,8 +66,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
           auth: ${{ secrets.COVERAGE_BUDGE }}
-          gistID: cf394ed0edc2f4dd2f1d692cedd26a77
-          filename: dav-express-test-pass-badge.json
+          gistID: 25afa5f62258dc4f590f218043d54521
+          filename: dav-express-pg-test-pass-badge.json
           label: Tests
           message: passing
           color: success
