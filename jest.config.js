@@ -22,9 +22,9 @@ module.exports = {
     coverageThreshold: {
         src: {
             branches: 60,
-            functions: 90,
-            lines: 90,
-            statements: 90,
+            functions: 85,
+            lines: 85,
+            statements: 85,
         },
         // "src/utils/*.ts": {
         //     statements: 50,
