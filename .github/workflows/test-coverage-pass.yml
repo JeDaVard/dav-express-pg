@@ -51,18 +51,15 @@ jobs:
           message: failed
           color: critical
 
-      - name: Migrate PostgreSQL DB
-        run: npm install && npm run db:migrate
-
       - name: Setup Node.js environment and Test coverage
         env:
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           PG_HOST: localhost
           PG_DATABASE: postgres
-          PG_USER: runner
+          PG_USER: postgres
           PG_PASSWORD: postgres_password
           PG_PORT: 5432
-        run: npm install && npm run test:cover
+        run: npm install && npm run db:migrate && npm run test:cover
 
       - name: Set coverage badge color
         if: env.GH_COVERAGE < 40
