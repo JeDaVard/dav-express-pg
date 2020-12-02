@@ -16,6 +16,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres_password
+          POSTGRES_USER: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+
     strategy:
       matrix:
         node-version: [12.x, 14.x]
@@ -34,7 +53,18 @@ jobs:
           echo "::set-output name=ver::$ver"
 
       - run: npm ci
+      - run: npm run db:migrate
+        env:
+          PG_HOST: localhost
+          PG_DATABASE: postgres
+          PG_USER: postgres
+          PG_PASSWORD: postgres_password
+          PG_PORT: 5432
       - run: npm run test:ci
         env:
-          MONGO_URI: '${{secrets.MONGO_URI}}-node-${{steps.node-v.outputs.ver}}'
+          PG_HOST: localhost
+          PG_DATABASE: postgres
+          PG_USER: postgres
+          PG_PASSWORD: postgres_password
+          PG_PORT: 5432
           JWT_SECRET: ${{ secrets.JWT_SECRET }}

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="Revert &quot;postgres auth creds&quot;&#10;&#10;This reverts commit 662846cc">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="Revert &quot;postgres auth creds&quot;&#10;&#10;This reverts commit 662846cc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.github/workflows" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
@@ -59,7 +56,7 @@
       <workItem from="1606852706924" duration="75000" />
       <workItem from="1606852825576" duration="3699000" />
       <workItem from="1606856635600" duration="7016000" />
-      <workItem from="1606869949383" duration="378000" />
+      <workItem from="1606869949383" duration="683000" />
     </task>
     <servers />
   </component>
