@@ -1,10 +1,15 @@
 import { Router } from 'express';
 import { router as users } from 'routes/api/users/users';
+import { router as videos } from 'routes/api/videos/videos';
 import { healthController } from '../../controllers/health';
+import { currentUser } from '../../middlewares';
 
 const router = Router();
 
+router.use(currentUser);
+
 router.use(`/users`, users);
+router.use(`/videos`, videos);
 
 /**
  * @api {get} /health Request Health information

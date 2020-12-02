@@ -45,7 +45,7 @@ export function response<T = null>(
             return failRes(res, 400, message || 'Bad Request', errors);
         }
         case 401: {
-            return failRes(res, 402, message || 'Unauthorized', errors);
+            return failRes(res, 401, message || 'Unauthorized', errors);
         }
         case 403: {
             return failRes(res, 403, message || 'Forbidden', errors);

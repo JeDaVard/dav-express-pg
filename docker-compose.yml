@@ -10,26 +10,10 @@ services:
             interval: 10s
             timeout: 5s
             retries: 5
-#    migrate:
-#        build:
-#            dockerfile: Dockerfile.development
-#            context: .
-#        entrypoint: npm run db:migrate
-#        environment:
-#            - NODE_ENV=development
-#            - PG_HOST=postgres
-#            - PG_PORT=5432
-#            - PG_DATABASE=postgres
-#            - PG_USER=postgres
-#            - PG_PASSWORD=myPostgresPassword
-#        volumes:
-#            - .:/usr/src/app
-#        depends_on:
-#            postgres:
-#                condition: service_healthy
     node:
         depends_on:
-            -   postgres
+            postgres:
+                condition: service_healthy
         build:
             dockerfile: Dockerfile.development
             context: .

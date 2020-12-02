@@ -9,7 +9,10 @@ import { client } from 'components/db';
 declare global {
     namespace NodeJS {
         interface Global {
-            signUpAndCookie(email?: string, id?: number): { id: string; cookies: string[] };
+            signUpAndCookie(
+                email?: string,
+                id?: number,
+            ): { id: number; cookies: string[] };
         }
     }
 }
@@ -65,5 +68,5 @@ global.signUpAndCookie = (email, id) => {
     // Imitate default expressJS session-cookies appearance
     const cookies = [`express:sess=${base64}`];
 
-    return { id: String(payload.id), cookies };
+    return { id: payload.id, cookies };
 };
