@@ -6,6 +6,8 @@
     "**/__test__/*",
     "**/__mocks__/*",
     "**/__mockData__/",
-    "src/test"
+    "src/test",
+    "tools",
+    "jest.config.js"
   ]
 }
