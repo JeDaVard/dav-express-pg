@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e34b285-1b59-4dd3-92de-aa37383a66d9" name="Default Changelist" comment="Revert &quot;postgres auth creds&quot;&#10;&#10;This reverts commit 662846cc">
-      <change afterPath="$PROJECT_DIR$/src/config/validations/videos.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/video.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/libs/errors/forbidden-error.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/api/videos/__test__/videos.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/api/videos/videos.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test-coverage-pass.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/validations/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/validations/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/errors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/errors/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/api/users/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api/users/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +63,9 @@
       <workItem from="1606852825576" duration="3699000" />
       <workItem from="1606856635600" duration="7016000" />
       <workItem from="1606869949383" duration="683000" />
-      <workItem from="1606924466010" duration="2464000" />
+      <workItem from="1606924466010" duration="2658000" />
+      <workItem from="1606948404663" duration="36000" />
+      <workItem from="1606982693452" duration="259000" />
     </task>
     <servers />
   </component>
